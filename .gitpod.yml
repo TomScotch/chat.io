@@ -4,7 +4,7 @@ tasks:
   - before: npm install
   - command: service mongodb stop ; mongod --dbpath data/ --journal --port 27017;
   - command: service redis-server stop ; redis-server --port 6379;
-  - init: npm start --production
+  - command: npm start
 ports:
   - port: 27017
   - port: 6379

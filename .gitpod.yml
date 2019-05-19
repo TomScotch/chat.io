@@ -2,7 +2,7 @@ image:
   file: gitpod.dockerfile
 tasks:
   - command: service mongodb stop ; mongod --dbpath_ip data/ --journal --port 27017;
-  - command: service redis-server stop ; redis-server -p 6379;
+  - command: service redis-server stop ; redis-server --port 6379;
   - command: npm install
   - command: npm start
 ports:

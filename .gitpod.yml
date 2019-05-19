@@ -4,9 +4,9 @@ tasks:
   - command: service mongodb stop ; mongod --dbpath /data/db/ --journal --bind_ip 0.0.0.0 --port 27019;
   - command: redis-server;
   - command: npm install
-  - command: npm start --production
+  - command: npm start
 ports:
   - port: 27017
-  - port: 6379
+  - port: 36379
   - port: 3000
     onOpen: open-preview

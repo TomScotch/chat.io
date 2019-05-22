@@ -26,8 +26,8 @@ RUN npm install
 EXPOSE 80
 RUN npm install
 VOLUME /data/db
-RUN service redis-server start
+RUN service redis-server restart
 COPY mongodb.conf /etc/
-#RUN service mongodb start
-CMD ["bash"]
-#CMD ["node","server.js"]
+RUN service mongodb restart
+#CMD ["bash"]
+CMD ["node","server.js"]

@@ -1,1 +1,1 @@
-service redis-server restart & mongod -f /etc/mongodb.conf & node server.js
+ mongod -f /etc/mongodb.conf & service redis-server restart && node server.js

@@ -27,7 +27,7 @@ services:
     ports:
       - '27017'
     volumes:
-      - 'data:/data/db'
+      - 'data-mongo:/data/db'
     networks:
       - chat-network
     privileged: true
@@ -42,7 +42,7 @@ services:
     ports:
       - '6379'
     volumes:
-      - 'data:/data/db'
+      - 'data-redis:/data/db'
     networks:
       - chat-network
     privileged: true
@@ -51,4 +51,5 @@ networks:
   chat-network:
     driver: bridge
 volumes:
-  data:
+  data-redis:
+  data-mongo:

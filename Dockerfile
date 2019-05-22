@@ -28,6 +28,6 @@ RUN npm install
 VOLUME /data/db
 RUN service redis-server restart
 COPY mongodb.conf /etc/
-RUN service mongodb restart
-#CMD ["bash"]
-CMD ["node","server.js"]
+COPY run.sh /opt/chat.io/
+RUN chmod +x run.sh
+CMD ["bash","run.sh"]

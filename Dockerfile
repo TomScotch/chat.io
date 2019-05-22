@@ -26,8 +26,11 @@ RUN npm install
 EXPOSE 80
 RUN npm install
 VOLUME /data/db
-RUN service redis-server restart
+#RUN service redis-server restart
 COPY mongodb.conf /etc/
 COPY run.sh /opt/chat.io/
 RUN chmod +x run.sh
-CMD ["bash","run.sh"]
+#CMD ["bash","run.sh"]
+RUN service redis-server start
+CMD ["mongod"]
+#CMD ["node","server.js"]

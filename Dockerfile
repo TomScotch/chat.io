@@ -12,4 +12,5 @@ WORKDIR /opt/chat.io/
 RUN npm install
 COPY run.sh /opt/chat.io/
 RUN chmod +x run.sh
+EXPOSE 3000:80
 CMD ["sh run.sh"]

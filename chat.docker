@@ -1,6 +1,6 @@
 FROM armhf/ubuntu
 
-RUN  apt update ; apt install redis-server mongodb wget npm -y
+RUN  apt update ; apt install wget npm -y
 
 COPY public/ /opt/chat.io/public/
 COPY app/ /opt/chat.io/app/
@@ -26,5 +26,4 @@ RUN npm install
 EXPOSE 80
 RUN npm install
 VOLUME /data/db
-#CMD ["node","server.js"]
-#CMD ["/usr/bin/bash"]
+CMD ["node","server.js"]

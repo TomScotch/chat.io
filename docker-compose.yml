@@ -1,0 +1,54 @@
+version: '2.1'
+services:
+  chat.io:
+    image: 
+    build:
+      context: .
+      dockerfile: chat.docker
+    ports:
+      - '80'
+    networks:
+      - chat-network
+    depends_on:
+      - mongo
+      - redis
+    links:
+      - mongo
+      - redis
+    privileged: true
+    restart: always
+  mongo:
+    image: 
+    build:
+      context: .
+      dockerfile: mongo.docker
+    expose:
+      - '27017'
+    ports:
+      - '27017'
+    volumes:
+      - 'data:/data/db'
+    networks:
+      - chat-network
+    privileged: true
+    restart: always
+ redis:
+   image:
+   build:
+     context: .
+     dockerfile: redis.docker
+    expose:
+      - '6379'
+    ports:
+      - '6379'
+    volumes:
+      - 'data:/data/db'
+    networks:
+      - chat-network
+    privileged: true
+    restart: always
+networks:
+  chat-network:
+    driver: bridge
+volumes:
+  data:

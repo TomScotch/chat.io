@@ -2,7 +2,7 @@
 	"db": {
 		"username": "",
 		"password": "",
-		"host": "127.0.0.1",
+		"host": "10.114.101.1",
 		"port": 27017,
 		"name": "mongoDB"
 	},

@@ -1,1 +1,1 @@
- mongod -f /etc/mongodb.conf & redis-server --port 6379 &  node server.js
+ mongod -f /etc/mongodb.conf & redis-server -f /etc/mongodb.conf &  node server.js

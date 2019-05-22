@@ -1,3 +1,3 @@
-mongod --dbpath data/ --journal --port 27017;
-redis-server --port 6379;
+mongod --journal --port 27017;
+service redis-server start ;
 npm start

@@ -3,7 +3,6 @@ FROM armhf/ubuntu
 RUN  apt update ; apt install wget npm -y
 
 COPY public/ /opt/chat.io/public/
-COPY app/ /opt/chat.io/app/
 
 #VOLUME /opt/chat.io/data/
 
@@ -11,6 +10,16 @@ COPY server.js /opt/chat.io/
 COPY package-lock.json /opt/chat.io/
 COPY package.json /opt/chat.io/
 COPY app.json /opt/chat.io/
+
+COPY app/auth/  /opt/chat.io/app/auth/
+COPY app/config/  /opt/chat.io/app/config/
+COPY app/database/ /opt/chat.io/app/database/
+#COPY  app/logger  /opt/chat.io/app/logger
+COPY app/models/ /opt/chat.io/app/models/
+COPY app/routes/ /opt/chat.io/app/routes/
+copy  app/session/  /opt/chat.io/app/session/
+copy app/socket/  /opt/chat.io/app/socket/
+COPY app/views/ /opt/chat.io/app/views/
 
 WORKDIR /opt/chat.io
 

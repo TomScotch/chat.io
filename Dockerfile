@@ -23,7 +23,7 @@ RUN npm install -g npm ; npm install
 RUN ln -Pf nodejs/bin/node /usr/bin/nodejs
 
 RUN npm install
-COPY run.sh /opt/chat.io/
+#COPY run.sh /opt/chat.io/
 RUN chmod +x run.sh
 EXPOSE 80
 RUN npm install

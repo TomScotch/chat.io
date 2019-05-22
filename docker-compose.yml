@@ -7,16 +7,16 @@ services:
       dockerfile: chat.docker
     ports:
       - '80'
-    networks:
-      - chat-network
+#    networks:
+#      - chat-network
     depends_on:
       - mongo
       - redis
     links:
       - mongo
       - redis
-    privileged: true
-    restart: always
+#    privileged: true
+#    restart: always
   mongo:
     image: 
     build:

@@ -1,0 +1,15 @@
+FROM armhf/ubuntu
+RUN  apt update ; apt install redis mongodb node npm -y
+RUN  service mongodb stop ; service redis stop
+COPY public/ /opt/chat.io/public/
+COPY app/ /opt/chat.io/app/
+VOLUME /opt/chat.io/data/
+COPY server.js /opt/chat.io/
+COPY package-lock.json /opt/chat.io/
+COPY package.json /opt/chat.io/
+COPY app.json /opt/chat.io/
+WORKDIR /opt/chat.io/
+RUN npm install
+COPY run.sh /opt/chat.io/
+RUN chmod +x run.sh
+CMD ["sh run.sh"]

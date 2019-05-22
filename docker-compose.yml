@@ -42,7 +42,7 @@ services:
     ports:
       - '6379'
     volumes:
-      - 'data-redis:/data/db'
+      - 'data-redis:/data/'
 #    networks:
 #      - chat-network
 #    privileged: true

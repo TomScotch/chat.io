@@ -25,5 +25,5 @@ RUN ln -Pf nodejs/bin/node /usr/bin/nodejs
 RUN npm install
 EXPOSE 80
 RUN npm install
-VOLUME /data/db
+#VOLUME /data/db
 CMD ["node","server.js"]

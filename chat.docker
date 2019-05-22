@@ -27,4 +27,4 @@ EXPOSE 80
 RUN npm install
 VOLUME /data/db
 #CMD ["node","server.js"]
-CMD ["/usr/bin/bash"]
+#CMD ["/usr/bin/bash"]

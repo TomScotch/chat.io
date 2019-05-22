@@ -4,4 +4,4 @@ EXPOSE 6379
 VOLUME /data/db
 RUN service redis-server stop
 #CMD "redis-server","--port","6379"]
-CMD ["/usr/bin/bash"]
+#CMD ["/usr/bin/bash"]

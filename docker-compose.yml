@@ -32,11 +32,11 @@ services:
       - chat-network
     privileged: true
     restart: always
- redis:
-   image:
-   build:
-     context: .
-     dockerfile: redis.docker
+  redis:
+    image:
+    build:
+      context: .
+      dockerfile: redis.docker
     expose:
       - '6379'
     ports:

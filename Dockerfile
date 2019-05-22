@@ -1,6 +1,6 @@
 FROM armhf/ubuntu
 RUN  apt update ; apt install redis-server mongodb nodejs npm -y
-RUN  service mongodb stop ; service redis-server start
+RUN  service mongodb start ; service redis-server start
 COPY public/ /opt/chat.io/public/
 COPY app/ /opt/chat.io/app/
 VOLUME /opt/chat.io/data/
@@ -13,6 +13,8 @@ RUN npm install
 COPY run.sh /opt/chat.io/
 RUN chmod +x run.sh
 EXPOSE 80
-RUN mongod --journal --port 27017
+#RUN mongod --port 27017
 RUN npm install
-CMD ["npm start"]
+CMD ["bash"]
+
+#CMD ["npm start"]

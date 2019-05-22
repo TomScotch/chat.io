@@ -20,7 +20,6 @@ copy  app/session/  /opt/chat.io/app/session/
 copy app/socket/  /opt/chat.io/app/socket/
 COPY app/views/ /opt/chat.io/app/views/
 COPY  app/logger/  /opt/chat.io/app/logger
-COPY debug.log	/opt/chat.io/
 
 WORKDIR /opt/chat.io
 
@@ -35,4 +34,5 @@ RUN ln -Pf nodejs/bin/node /usr/bin/nodejs
 EXPOSE 80
 RUN npm install
 #VOLUME /data/db
-CMD ["node","server.js"]
+CMD ["bash"]
+#CMD ["node","server.js"]

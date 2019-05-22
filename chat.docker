@@ -28,7 +28,7 @@ RUN xz -d node-v12.2.0-linux-armv7l.tar.xz
 RUN tar xvf node-v12.2.0-linux-armv7l.tar
 RUN mv node-v12.2.0-linux-armv7l nodejs
 RUN ln -Pf nodejs/bin/node /usr/bin/node
-#RUN npm install -g npm ; npm install
+RUN npm install -g npm ; npm install
 RUN ln -Pf nodejs/bin/node /usr/bin/nodejs
 
 EXPOSE 80

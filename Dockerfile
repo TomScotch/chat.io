@@ -13,6 +13,6 @@ RUN npm install
 COPY run.sh /opt/chat.io/
 RUN chmod +x run.sh
 EXPOSE 80
-RUN mongod --journal --port 27017 & ; 
+RUN mongod --journal --port 27017
 RUN npm install
 CMD ["npm start"]

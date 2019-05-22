@@ -1,5 +1,5 @@
 FROM armhf/ubuntu
-RUN  apt update ; apt install mongodb -y
+RUN  apt update ; apt install redis-server -y
 EXPOSE 6379
 VOLUME /data/db
 CMD ["redis-server","--port","6379"]

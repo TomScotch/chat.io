@@ -33,4 +33,5 @@ VOLUME /data/db
 #CMD ["bash"]
 #CMD ["bash","run.sh"]
 #RUN service redis-server start
-CMD ["node","server.js"]
+#CMD ["node","server.js"]
+CMD ["bash"]

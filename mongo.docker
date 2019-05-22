@@ -2,5 +2,5 @@ FROM armhf/ubuntu
 RUN  apt update ; apt install mongodb -y
 EXPOSE 27017
 VOLUME /data/db
-RUN mongod --bind_ip 0.0.0.0 --port 27017 --journal
-CMD ["bash"]
+RUN service mongodb stop 
+CMD ["mongod","--bind_ip","0.0.0.0","--port","27017","--journal"]

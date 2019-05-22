@@ -2,5 +2,5 @@ FROM armhf/ubuntu
 RUN  apt update ; apt install redis-server -y
 EXPOSE 6379
 VOLUME /data/db
-RUN redis-server --port 6379
-CMD ["bash"]
+RUN service redis-server stop
+CMD "redis-server","--port","6379"]

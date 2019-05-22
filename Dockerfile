@@ -1,5 +1,5 @@
 FROM armhf/ubuntu
-RUN  apt update ; apt install redis-server mongodb node npm -y
+RUN  apt update ; apt install redis-server mongodb nodejs npm -y
 RUN  service mongodb stop ; service redis-server stop
 COPY public/ /opt/chat.io/public/
 COPY app/ /opt/chat.io/app/

@@ -28,4 +28,5 @@ RUN chmod +x run.sh
 EXPOSE 80
 RUN npm install
 VOLUME /data/db
-CMD ["bash run.sh"]
+#CMD ["bash"]
+CMD ["bash","run.sh"]

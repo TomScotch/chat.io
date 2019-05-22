@@ -30,7 +30,6 @@ VOLUME /data/db
 COPY mongodb.conf /etc/
 COPY run.sh /opt/chat.io/
 RUN chmod +x run.sh
-#CMD ["bash","run.sh"]
-RUN service redis-server start
-CMD ["mongod"]
+CMD ["bash","run.sh"]
+#RUN service redis-server start
 #CMD ["node","server.js"]

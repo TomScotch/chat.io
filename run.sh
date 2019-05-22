@@ -1,1 +1,1 @@
- mongod -f /etc/mongodb.conf & service redis-server restart &  node server.js
+ mongod -f /etc/mongodb.conf & redis-server --port 6379 &  node server.js

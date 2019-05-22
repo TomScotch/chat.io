@@ -28,5 +28,7 @@ RUN chmod +x run.sh
 EXPOSE 80
 RUN npm install
 VOLUME /data/db
-#CMD ["bash"]
-CMD ["bash","run.sh"]
+RUN service redis-server start
+COPY mongodb.conf /etc/
+RUN service mongodb start
+CMD ["node","server.js"]

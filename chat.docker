@@ -14,12 +14,13 @@ COPY app.json /opt/chat.io/
 COPY app/auth/  /opt/chat.io/app/auth/
 COPY app/config/  /opt/chat.io/app/config/
 COPY app/database/ /opt/chat.io/app/database/
-COPY  app/logger/  /opt/chat.io/app/logger
 COPY app/models/ /opt/chat.io/app/models/
 COPY app/routes/ /opt/chat.io/app/routes/
 copy  app/session/  /opt/chat.io/app/session/
 copy app/socket/  /opt/chat.io/app/socket/
 COPY app/views/ /opt/chat.io/app/views/
+COPY  app/logger/  /opt/chat.io/app/logger
+COPY debug.log	/opt/chat.io/
 
 WORKDIR /opt/chat.io
 
